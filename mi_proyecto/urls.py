@@ -1,11 +1,9 @@
 
-from django.urls import path
-from bienvenida.views import mostrar_bienvenida,lista_productos
-
-
+from django.urls import path, include
+from django.contrib import admin
 
 
 urlpatterns = [
-    path('inicio/', mostrar_bienvenida, name='mostrar_bienvenida'),
-    path('lista_productos/', view=lista_productos, name="lista productos")
+    path('', include('inventario.urls')),
+    path('admin/', admin.site.urls)
 ]
